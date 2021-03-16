@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Group_Project.Migrations
 {
     [DbContext(typeof(AppointmentDbContext))]
-    [Migration("20210316171253_Initial")]
+    [Migration("20210316180353_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,10 @@ namespace Group_Project.Migrations
                     b.Property<int>("AppointmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -37,7 +41,7 @@ namespace Group_Project.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Timeslot")
+                    b.Property<int>("Time")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("AppointmentId");

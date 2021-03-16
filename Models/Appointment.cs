@@ -31,10 +31,22 @@ namespace Group_Project.Models
         public string Phone { get; set; }
 
 
-        [Required(ErrorMessage = "Time Slot Required")]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
-        //[RegularExpression(@"^(?:0?[8-9]|1[1-2]|2[0-9]):[0][0]$", ErrorMessage = "Invalid time.")]
+        
         [Range(8,20)]
-        public int Timeslot { get; set; }
+        [Required(ErrorMessage = "Please select an appointment time")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(DataFormatString = "@{0: HH}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Appointment Time")]
+        public int Time { get; set; }
+
+        //[DataType(DataType.Time)]
+        //[Range(typeof(TimeSpan), "8", "20")]
+        //[DisplayFormat(DataFormatString = "{0:HH}")]
+
+        [Required(ErrorMessage = "Please enter the appointment date.")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "@{0: dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display (Name = "Appointment Date")]
+        public string Date { get; set; }
     }
 }

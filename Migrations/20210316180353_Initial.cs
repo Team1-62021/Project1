@@ -16,7 +16,8 @@ namespace Group_Project.Migrations
                     GroupSize = table.Column<int>(type: "INTEGER", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Phone = table.Column<string>(type: "TEXT", nullable: true),
-                    Timeslot = table.Column<int>(type: "INTEGER", nullable: false)
+                    Time = table.Column<int>(type: "INTEGER", nullable: false),
+                    Date = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

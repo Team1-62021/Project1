@@ -25,7 +25,8 @@ namespace Group_Project.Models
                         GroupName = "Wellness",
                         GroupSize = 4,
                         Email = "brianna@gmail.com",
-                        Timeslot = 8
+                        Time = 8,
+                        Date = "12/12/2020"
                     }
                 );
 

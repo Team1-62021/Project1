@@ -21,6 +21,10 @@ namespace Group_Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -35,7 +39,7 @@ namespace Group_Project.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Timeslot")
+                    b.Property<int>("Time")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("AppointmentId");
