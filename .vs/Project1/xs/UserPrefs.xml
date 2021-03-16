@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{80FF99E6-DD8D-4462-92B1-FB719F6F4C31}|Default">
+  <MonoDevelop.Ide.ItemProperties.Project1 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/SignUp.cshtml">
+    <Files>
+      <File FileName="Views/Home/Index.cshtml" Line="7" Column="99" />
+      <File FileName="Views/SignUp.cshtml" Line="7" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project1" expanded="True">
+            <Node name="Project1" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="SignUp.cshtml" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
