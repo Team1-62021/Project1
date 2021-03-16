@@ -28,6 +28,18 @@ namespace Group_Project.Controllers
             return View();
         }
 
+        //view for creating an appointment
+        [HttpGet]
+        public IActionResult CreateAppointment()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateAppointment(Appointment newAppointment)
+        {
+            return View("Confirmation", newAppointment);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

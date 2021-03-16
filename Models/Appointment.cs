@@ -44,7 +44,7 @@ namespace Group_Project.Models
         //[DisplayFormat(DataFormatString = "{0:HH}")]
 
         [Required(ErrorMessage = "Please enter the appointment date.")]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "@{0: dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display (Name = "Appointment Date")]
         public string Date { get; set; }
