@@ -4,5 +4,11 @@
 @{
     ViewData["Title"] = "Create Appointment";
 }
+@model IQueryable<Appointment>
 
+    @foreach (var a in Model) {
+        <div>
+            <h3>@a.GroupName</h3>
+        </div>
+    }
 Here is where we view things

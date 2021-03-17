@@ -13,17 +13,15 @@ namespace Group_Project.Controllers
     {
         //creating repository information
         private IAppointmentRepository repository;
+
+        private readonly ILogger<HomeController> _logger;
         
-        public HomeController(IAppointmentRepository repo)
+        public HomeController(IAppointmentRepository repo, ILogger<HomeController> logger)
         {
             repository = repo;
-        }
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
             _logger = logger;
         }
+
 
         public IActionResult Index()
         {
