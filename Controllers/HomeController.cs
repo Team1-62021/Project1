@@ -34,6 +34,12 @@ namespace Group_Project.Controllers
             return View(repository.Appointments);
         }
 
+        [HttpGet]
+        //sign up page
+        public IActionResult SignUp() {
+            return View();
+        }
+
         //view for creating an appointment
         [HttpGet]
         public IActionResult CreateAppointment()
