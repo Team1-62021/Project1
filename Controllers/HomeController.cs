@@ -12,10 +12,12 @@ namespace Group_Project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IAppointmentRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IAppointmentRepository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public IActionResult Index()
@@ -39,6 +41,11 @@ namespace Group_Project.Controllers
         {
             return View("Confirmation", newAppointment);
         }
+
+        public IActionResult ViewAppointment()
+		{
+            return View(_repository.Appointments);
+		}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

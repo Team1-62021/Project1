@@ -1,0 +1,37 @@
+﻿@model IQueryable<Appointment>
+
+
+    <h3>View Appointments</h3>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="text-center">
+            <th>Appointment Time</th>
+            <th>Appointment Date</th>
+            <th>Name of Group</th>
+            <th>Size of Group</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Time</td>
+            <td>@x.Date</td>
+            <td>@x.GroupName</td>
+            <td>@x.GroupSize</td>
+            <td>@x.Email</td>
+            <td>@x.Phone</td>
+        </tr>
+        }
+     </tbody>
+</table>
+
+    
+    
+
+
+
+
