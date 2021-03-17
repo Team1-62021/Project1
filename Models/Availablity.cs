@@ -21,5 +21,14 @@ namespace Group_Project.Models
         
         [DataType(DataType.Time)]
         public int Time { get; set; }
+
+        public static List<int> TimeList() {
+            List<int> timeList = new List<int>();
+            for (int i = 8; i <= 20; i++)
+            {
+                timeList.Add(i);
+            }
+            return timeList;
+        }
     }
 }

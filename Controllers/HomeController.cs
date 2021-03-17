@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Group_Project.Models;
 using Group_Project.Models.ViewModels;
+using System;
 
 namespace Group_Project.Controllers
 {
@@ -28,20 +29,31 @@ namespace Group_Project.Controllers
             return View();
         }
 
-        
+        public static List<int> TimeList()
+        {
+            List<int> timeList = new List<int>();
+            for (int i = 8; i <= 20; i++)
+            {
+                timeList.Add(i);
+            }
+            return timeList;
+        }
 
         [HttpGet]
         //sign up page for picking appointment time from list with available
         public IActionResult SignUp()
         {
+            List<int> timelist = TimeList();
+            ViewBag.timelist = timelist;
             return View();
         }
+
 
         [HttpPost] //redirect to create apppointment
         public IActionResult SignUp(Availablity availableSelected)
         {
             ViewBag.Date = availableSelected.Date;
-            ViewBag.Time= availableSelected.Time;
+            ViewBag.Time = availableSelected.Time;
 
             return View("CreateAppointment");
         }
