@@ -11,6 +11,13 @@ namespace Group_Project.Controllers
 {
     public class HomeController : Controller
     {
+        //creating repository information
+        private IAppointmentRepository repository;
+        
+        public HomeController(IAppointmentRepository repo)
+        {
+            repository = repo;
+        }
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -26,7 +33,7 @@ namespace Group_Project.Controllers
         [HttpGet]
         public IActionResult ViewAppointments() 
         {
-            return View();
+            return View(repository.Appointments);
         }
 
         //view for creating an appointment
