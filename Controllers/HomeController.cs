@@ -23,11 +23,6 @@ namespace Group_Project.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         //view for creating an appointment
         [HttpGet]
         public IActionResult CreateAppointment()
