@@ -2,14 +2,16 @@
 using Group_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Group_Project.Migrations
 {
     [DbContext(typeof(AppointmentDbContext))]
-    partial class AppointmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210317192324_myMigrations")]
+    partial class myMigrations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +54,43 @@ namespace Group_Project.Migrations
                     b.Property<string>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Time")
+                    b.Property<bool>("Time10")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time11")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time12")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time13")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time14")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time15")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time16")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time17")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time18")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time19")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time20")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time8")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Time9")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Date");
