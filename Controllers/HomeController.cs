@@ -22,6 +22,12 @@ namespace Group_Project.Controllers
         {
             return View();
         }
+        //View appointments
+        [HttpGet]
+        public IActionResult ViewAppointments() 
+        {
+            return View();
+        }
 
         //view for creating an appointment
         [HttpGet]
@@ -29,6 +35,7 @@ namespace Group_Project.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult CreateAppointment(Appointment newAppointment)
         {
