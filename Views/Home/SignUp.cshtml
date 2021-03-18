@@ -11,10 +11,10 @@ Sign up here and send that info (selected date and time) to the form page to sig
 
 @foreach (var d in ViewBag.availability)
 {
-    @d.Date
+    @d.Date <br />
     @foreach (var t in d.availTime)
     {
-        @t
+        @t <br />
     }
     <br />
 }
