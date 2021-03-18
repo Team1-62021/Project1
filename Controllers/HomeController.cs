@@ -43,7 +43,42 @@ namespace Group_Project.Controllers
         //sign up page for picking appointment time from list with available
         public IActionResult SignUp()
         {
+            var nowDate = DateTime.Now;
+
             List<int> timelist = TimeList();
+            List<Availablity> availability = new List<Availablity>();
+            for (int i=0; i<=7; i++)
+            {
+                var tempAvail = new Availablity();
+                List<int> tempTime = new List<int>();
+                tempAvail.Date = nowDate.AddDays(i).ToString("yyyy-MM-dd");
+                var nonAvail = from date in context.Appointments
+                               where date.Date == tempAvail.Date
+                               select date.Time;
+                //add times to the array that are not in the query
+                //problem (it doesn't account for more than one date)
+                for (int j = 8; j <= 20; j++) {
+
+                    if (nonAvail.Count() > 0)
+                    {
+                        foreach (var d in nonAvail)
+                        {
+                            if (j != d)
+                            {
+                                tempTime.Add(j);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        tempTime.Add(j);
+                    }
+                }
+
+                tempAvail.availTime = tempTime;
+                availability.Add(tempAvail);
+            }
+            ViewBag.availability = availability;
             ViewBag.timelist = timelist;
             return View();
         }
