@@ -1,0 +1,54 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+@model Availablity
+
+Sign up here and send that info (selected date and time) to the form page to sign up
+
+@foreach (var d in ViewBag.availability)
+{
+    @d.Date <br />
+    @foreach (var t in d.availTime)
+    {
+        @t <br />
+    }
+    <br />
+}
+
+<form asp-action="SignUp" method="post">
+    <div>
+        <div>
+            <label asp-for="Date">Date</label>
+            <input asp-for="Date" />
+        </div>
+
+        <select asp-for="Time">
+            <option>----</option>
+            @foreach (var t in ViewBag.timelist)
+            {
+                @if (t > 12)
+                {
+                    <option value="@t">@(t-12):00 pm</option>
+                }
+                else if (t == 12)
+                {
+                    <option value="@t">@t:00 pm</option>
+                }
+                else
+                {
+                    <option value="@t">@t:00 am</option>
+                }
+
+            }
+
+
+        </select>
+
+        <button type="submit">Sign Up</button>
+
+    </div>
+</form>

@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Group_Project.Migrations
 {
     [DbContext(typeof(AppointmentDbContext))]
-    [Migration("20210316180353_Initial")]
-    partial class Initial
+    [Migration("20210317215548_myMigrations4")]
+    partial class myMigrations4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,19 @@ namespace Group_Project.Migrations
                     b.HasKey("AppointmentId");
 
                     b.ToTable("Appointments");
+                });
+
+            modelBuilder.Entity("Group_Project.Models.Availablity", b =>
+                {
+                    b.Property<string>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Time")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Date");
+
+                    b.ToTable("Availablities");
                 });
 #pragma warning restore 612, 618
         }

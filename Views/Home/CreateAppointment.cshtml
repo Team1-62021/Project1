@@ -33,27 +33,15 @@
     </div>
 
     <div>
-        <label asp-for="Date" class="required-field">Date </label>
-        <input asp-for="Date" />
+        <label asp-for="Date" class="required-field">Date</label>
+        <p>@ViewBag.Date</p>
+        <input type="hidden" value="@ViewBag.Date" asp-for="Date" />
     </div>
 
     <div>
-        <label asp-for="Time" class="required-field">Time </label>
-        <select asp-for="Time">
-            <option value="8">8 am</option>
-            <option value="9">9 am</option>
-            <option value="10">10 am</option>
-            <option value="11">11 am</option>
-            <option value="12">Noon</option>
-            <option value="13">1 pm</option>
-            <option value="14">2 pm</option>
-            <option value="15">3 pm</option>
-            <option value="16">4 pm</option>
-            <option value="17">5 pm</option>
-            <option value="18">6 pm</option>
-            <option value="19">7 pm</option>
-            <option value="20">8 pm</option>
-        </select>
+        <label asp-for="Time" class="required-field">Time</label>
+        <p>@ViewBag.Time</p>
+        <input type="hidden" value="@ViewBag.Time" asp-for="Time" />
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Create Appointment</button>

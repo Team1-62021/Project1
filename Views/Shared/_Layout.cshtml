@@ -21,15 +21,15 @@
                         <li class="nav-item">
                             <a class="nav-link navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">Temple Tours</a>
                         </li>
-                        @*<li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>*@
-                        <!--link to create appointment view-->
+                        <!--this link returns view to see list of all available appointment days/times-->
                         <li class="nav-item">
-                            <a class="nav-link hover" asp-area="" asp-controller="Home" asp-action="CreateAppointment">New Appointment</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="SignUp">Sign Up</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hover" asp-area="" asp-controller="Home" asp-action="ViewAppointment">View Appointments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hover" asp-area="" asp-controller="Home" asp-action="CreateAppointment">New Appointments</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Group 1-6: Abbie Anderson, Bri Sperry, Shayna Oh, Tyler Colson - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Group 1-6: Abbie Anderson, Bri Sperry, Shayna Oh, Tyler Colson - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
