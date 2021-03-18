@@ -53,30 +53,17 @@ namespace Group_Project.Controllers
             {
                 var tempAvail = new Availablity();
                 List<int> tempTime = new List<int>();
+
                 tempAvail.Date = nowDate.AddDays(i).ToString("yyyy-MM-dd");
                 var nonAvail = from date in context.Appointments
                                where date.Date == tempAvail.Date
                                select date.Time;
                 //add times to the array that are not in the query
                 //problem (it doesn't account for more than one occurrence in a date)
-                for (int j = 8; j <= 20; j++) {
-
-                    if (nonAvail.Count() > 0)
-                    {
-                        foreach (var d in nonAvail)
-                        {
-                            if (j != d)
-                            {
-                                tempTime.Add(j);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        tempTime.Add(j);
-                    }
+                foreach (var query in nonAvail)
+                {
+                    tempTime.Add(query);
                 }
-
                 tempAvail.availTime = tempTime;
                 availability.Add(tempAvail);
             }
