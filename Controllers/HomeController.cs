@@ -55,6 +55,13 @@ namespace Group_Project.Controllers
                 var nonAvail = from date in context.Appointments
                                where date.Date == tempAvail.Date
                                select date.Time;
+                for (int j = 8; j <= 20; j++) {
+                    var x = 0;
+                    if (j != nonAvail.AsEnumerable().ElementAt(x)) {
+                        tempTime.Add(nonAvail.AsEnumerable().ElementAt(x));
+                    }
+                    x++;
+                }
                 foreach (var d in nonAvail)
                 {
                     tempTime.Add(d);
