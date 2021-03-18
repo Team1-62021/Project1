@@ -47,6 +47,8 @@ namespace Group_Project.Controllers
 
             List<int> timelist = TimeList();
             List<Availablity> availability = new List<Availablity>();
+            //list to keep track of of dates already used
+            
             for (int i=0; i<=7; i++)
             {
                 var tempAvail = new Availablity();
@@ -56,7 +58,7 @@ namespace Group_Project.Controllers
                                where date.Date == tempAvail.Date
                                select date.Time;
                 //add times to the array that are not in the query
-                //problem (it doesn't account for more than one date)
+                //problem (it doesn't account for more than one occurrence in a date)
                 for (int j = 8; j <= 20; j++) {
 
                     if (nonAvail.Count() > 0)
