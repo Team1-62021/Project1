@@ -2,7 +2,36 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center heading">
+    <h3>Layton Utah Temple Tours</h3>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5 text-center">
+            <img src="~/img/LaytonTemple.jpg" class="temple img-fluid"/>
+            <a class="btn btn-primary homeButton" asp-controller="Home" asp-action="CreateAppointment">Sign up for a tour</a>
+        </div>
+        <div class="col-7">
+            <p>PLEASE SIGN-UP FOR SUNDAY TOURS ONLY.  WE WILL SOON HAVE A NEW SCHEDULE SINCE WE HAVE BEEN ASKED TO STOP ALL OUTSIDE TOURS. Please review the available slots ON SUNDAY ONLY and click on the button to sign up. Use the "quantity" field to let us know how many people will be in your group. Thank you!</p>
+            <p class="bold">Tour Instructions</p>
+            <ul>
+                <li>Masks are required</li>
+                <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer</li>
+                <li>Dress casual, except on Sunday</li>
+            </ul>
+            <p class="bold">Special Accomodations</p>
+            <ul>
+                <li>Spanish-speaking tours are available on Thursday, Friday, Saturday or Sunday</li>
+            </ul>
+            <p class="bold">Available Tours</p>
+            <ul>
+                <li>Tour (Outdoor): We have been asked to discontinue outside tours at this time</li>
+                <li>Trailer Tour: All tours will be inside the trailer. Masks are required</li>
+            </ul>
+            <p class="bold">For questions or special requests</p>
+            <p>Call: 801-628-4488</p>
+            <p>Email: LaytonTempleTours@gmail.com</p>
+        </div>
+    </div>
 </div>
