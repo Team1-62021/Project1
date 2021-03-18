@@ -44,16 +44,24 @@ namespace Group_Project.Controllers
         public IActionResult SignUp()
         {
             var nowDate = DateTime.Now;
-            nowDate = nowDate.Date;
 
             List<int> timelist = TimeList();
             List<Availablity> availability = new List<Availablity>();
             for (int i=0; i<=7; i++)
             {
                 var tempAvail = new Availablity();
-                tempAvail.Date = nowDate.AddDays(i).ToString();
-                availability.Add(tempAvail);
+                List<int> tempTime = new List<int>();
+                tempAvail.Date = nowDate.AddDays(i).ToString("yyyy-MM-dd");
+                var nonAvail = from date in context.Appointments
+                               where date.Date == tempAvail.Date
+                               select date.Time;
+                foreach (var d in nonAvail)
+                {
+                    tempTime.Add(d);
+                }
 
+                tempAvail.availTime = tempTime;
+                availability.Add(tempAvail);
             }
             ViewBag.availability = availability;
             ViewBag.timelist = timelist;

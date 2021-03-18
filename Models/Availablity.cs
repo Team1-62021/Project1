@@ -22,6 +22,7 @@ namespace Group_Project.Models
         [DataType(DataType.Time)]
         public int Time { get; set; }
 
+        public List<int> availTime;
 
         public static List<int> TimeList() {
             List<int> timeList = new List<int>();

@@ -11,7 +11,12 @@ Sign up here and send that info (selected date and time) to the form page to sig
 
 @foreach (var d in ViewBag.availability)
 {
-    @d.Date <br />
+    @d.Date
+    @foreach (var t in d.availTime)
+    {
+        @t
+    }
+    <br />
 }
 
 <form asp-action="SignUp" method="post">
