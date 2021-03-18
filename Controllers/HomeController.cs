@@ -43,7 +43,19 @@ namespace Group_Project.Controllers
         //sign up page for picking appointment time from list with available
         public IActionResult SignUp()
         {
+            var nowDate = DateTime.Now;
+            nowDate = nowDate.Date;
+
             List<int> timelist = TimeList();
+            List<Availablity> availability = new List<Availablity>();
+            for (int i=0; i<=7; i++)
+            {
+                var tempAvail = new Availablity();
+                tempAvail.Date = nowDate.AddDays(i).ToString();
+                availability.Add(tempAvail);
+
+            }
+            ViewBag.availability = availability;
             ViewBag.timelist = timelist;
             return View();
         }
