@@ -55,7 +55,10 @@ namespace Group_Project.Controllers
                 var nonAvail = from date in context.Appointments
                                where date.Date == tempAvail.Date
                                select date.Time;
+                //add times to the array that are not in the query
+                //problem (it doesn't account for more than one date)
                 for (int j = 8; j <= 20; j++) {
+
                     if (nonAvail.Count() > 0)
                     {
                         foreach (var d in nonAvail)
