@@ -107,6 +107,8 @@ namespace Group_Project.Controllers
                 //context.Availablities.
                 return View("Confirmation");
             }
+            ViewBag.Date = newAppointment.Date;
+            ViewBag.Time = newAppointment.Time;
             return View();
         }
 

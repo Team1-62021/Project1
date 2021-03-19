@@ -21,15 +21,17 @@ Form for group info entry
 
     <div>
         <label asp-for="GroupSize" class="required-field">Group Size </label>
-        <input asp-for="GroupSize" placeholder="Your group size..."/>
+        <input asp-for="GroupSize" placeholder="Your group size..." />
     </div>
 
     <div>
+        <span asp-validation-for="Phone" class="text-danger"></span><br />
         <label asp-for="Email" class="required-field">Email </label>
-        <input asp-for="Email" placeholder="Your email..."/>
+        <input asp-for="Email" placeholder="Your email..." />
     </div>
 
     <div>
+        <span asp-validation-for="Phone" class="text-danger"></span><br />
         <label asp-for="Phone">Phone</label>
         <input asp-for="Phone" placeholder="Your phone number..."/>
     </div>
