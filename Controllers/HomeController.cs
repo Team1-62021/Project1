@@ -51,6 +51,7 @@ namespace Group_Project.Controllers
             
             for (int i=0; i<=7; i++)
             {
+
                 var tempAvail = new Availablity();
                 List<int> tempTime = new List<int>();
 
@@ -60,9 +61,25 @@ namespace Group_Project.Controllers
                                select date.Time;
                 //add times to the array that are not in the query
                 //problem (it doesn't account for more than one occurrence in a date)
-                foreach (var query in nonAvail)
+
+                for (int j=8; j<=20; j++)
                 {
-                    tempTime.Add(query);
+                    bool if_found = false;
+                    if (nonAvail.Count() > 0)
+                    {
+                        foreach (var query in nonAvail)
+                        {
+                            if (j == query)
+                            {
+                                if_found = true;
+                            }
+                        }
+                    }
+
+                    if (if_found == false)
+                    {
+                        tempTime.Add(j);
+                    }
                 }
                 tempAvail.availTime = tempTime;
                 availability.Add(tempAvail);

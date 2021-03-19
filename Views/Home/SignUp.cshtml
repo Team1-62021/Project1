@@ -6,49 +6,43 @@
 }
 
 @model Availablity
-
 Sign up here and send that info (selected date and time) to the form page to sign up
 
 @foreach (var d in ViewBag.availability)
 {
-    @d.Date <br />
-    @foreach (var t in d.availTime)
-    {
-        @t <br />
-    }
-    <br />
-}
-
-<form asp-action="SignUp" method="post">
-    <div>
+    <form asp-action="SignUp" method="post">
         <div>
-            <label asp-for="Date">Date</label>
-            <input asp-for="Date" />
-        </div>
+            <div>
+                <label asp-for="Date">Date: </label>
+                <p>@d.Date</p>
+                <input type="hidden" asp-for="Date" value="@d.Date" />
+            </div>
 
-        <select asp-for="Time">
-            <option>----</option>
-            @foreach (var t in ViewBag.timelist)
-            {
-                @if (t > 12)
-                {
-                    <option value="@t">@(t-12):00 pm</option>
-                }
-                else if (t == 12)
-                {
-                    <option value="@t">@t:00 pm</option>
-                }
-                else
-                {
-                    <option value="@t">@t:00 am</option>
-                }
+            <select asp-for="Time">
+                <option>----</option>
+                    @foreach (var t in d.availTime)
+                    {
+                        @if (t > 12)
+                        {
+                        <option value="@t">@(t-12):00 pm</option>
+                    }
+                    else if (t == 12)
+                    {
+                        <option value="@t">@t:00 pm</option>
+                    }
+                    else
+                    {
+                        <option value="@t">@t:00 am</option>
+                    }
 
-            }
+                    }
 
 
-        </select>
+                </select>
 
-        <button type="submit">Sign Up</button>
+                <button type="submit">Sign Up</button>
 
-    </div>
-</form>
+            </div>
+        </form>
+    }
+
