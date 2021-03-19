@@ -47,34 +47,40 @@ namespace Group_Project.Controllers
 
             List<int> timelist = TimeList();
             List<Availablity> availability = new List<Availablity>();
+            //list to keep track of of dates already used
+            
             for (int i=0; i<=7; i++)
             {
+
                 var tempAvail = new Availablity();
                 List<int> tempTime = new List<int>();
+
                 tempAvail.Date = nowDate.AddDays(i).ToString("yyyy-MM-dd");
                 var nonAvail = from date in context.Appointments
                                where date.Date == tempAvail.Date
                                select date.Time;
                 //add times to the array that are not in the query
-                //problem (it doesn't account for more than one date)
-                for (int j = 8; j <= 20; j++) {
+                //problem (it doesn't account for more than one occurrence in a date)
 
+                for (int j=8; j<=20; j++)
+                {
+                    bool if_found = false;
                     if (nonAvail.Count() > 0)
                     {
-                        foreach (var d in nonAvail)
+                        foreach (var query in nonAvail)
                         {
-                            if (j != d)
+                            if (j == query)
                             {
-                                tempTime.Add(j);
+                                if_found = true;
                             }
                         }
                     }
-                    else
+
+                    if (if_found == false)
                     {
                         tempTime.Add(j);
                     }
                 }
-
                 tempAvail.availTime = tempTime;
                 availability.Add(tempAvail);
             }
