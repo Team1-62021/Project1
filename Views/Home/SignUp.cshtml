@@ -5,16 +5,19 @@
     ViewData["Title"] = "Sign Up";
 }
 
+<!--view for sign up
+pulls from database for dates and times
+checks selected dates and times against already used dates and times
+-->
 @model Availablity
-Sign up here and send that info (selected date and time) to the form page to sign up
+<h3>Please select a time slot</h3><br>
 
 @foreach (var d in ViewBag.availability)
 {
     <form asp-action="SignUp" method="post">
         <div>
             <div>
-                <label asp-for="Date">Date: </label>
-                <p>@d.Date</p>
+                <label asp-for="Date">@(Convert.ToDateTime(d.Date).ToString("D"))</label>
                 <input type="hidden" asp-for="Date" value="@d.Date" />
             </div>
 
@@ -23,24 +26,25 @@ Sign up here and send that info (selected date and time) to the form page to sig
                     @foreach (var t in d.availTime)
                     {
                         @if (t > 12)
+                            {
+                            <option value="@t">@(t-12):00 pm</option>
+                        }
+                        else if (t == 12)
                         {
-                        <option value="@t">@(t-12):00 pm</option>
-                    }
-                    else if (t == 12)
-                    {
-                        <option value="@t">@t:00 pm</option>
-                    }
-                    else
-                    {
-                        <option value="@t">@t:00 am</option>
-                    }
+                            <option value="@t">@t:00 pm</option>
+                        }
+                        else
+                        {
+                            <option value="@t">@t:00 am</option>
+                        }
 
                     }
 
 
                 </select>
 
-                <button type="submit">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <br><br><br>
 
             </div>
         </form>

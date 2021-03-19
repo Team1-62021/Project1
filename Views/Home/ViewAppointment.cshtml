@@ -18,8 +18,20 @@
         @foreach (var x in Model)
         {
         <tr>
-            <td>@x.Time</td>
-            <td>@x.Date</td>
+            @if (x.Time > 12)
+            {
+                <td>@(x.Time - 12):00 pm</td>
+            }
+            else if (x.Time == 12)
+            {
+                <td>@x.Time:00 pm</td>
+            }
+            else
+            {
+                <td>@x.Time:00 am</td>
+            }
+
+            <td>@(Convert.ToDateTime(x.Date).ToString("D"))</td>
             <td>@x.GroupName</td>
             <td>@x.GroupSize</td>
             <td>@x.Email</td>

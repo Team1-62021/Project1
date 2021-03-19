@@ -6,7 +6,9 @@
 }
 
 @model Group_Project.Models.Appointment
-
+<!--View for create appointments
+Form for group info entry
+-->
 <div class="text-center heading">
     <h3>Appointment Information</h3>
 </div>
@@ -34,13 +36,26 @@
 
     <div>
         <label asp-for="Date">Date</label>
-        <p>@ViewBag.Date</p>
+        <p>@(Convert.ToDateTime(ViewBag.Date).ToString("D"))</p>
         <input type="hidden" value="@ViewBag.Date" asp-for="Date" />
     </div>
 
     <div>
         <label asp-for="Time">Time</label>
-        <p>@ViewBag.Time</p>
+        <p>
+            @if (ViewBag.Time > 12)
+            {
+                <td>@(ViewBag.Time - 12):00 pm</td>
+            }
+            else if (ViewBag.Time == 12)
+            {
+                <td>@ViewBag.Time:00 pm</td>
+            }
+            else
+            {
+                <td>@ViewBag.Time:00 am</td>
+            }
+        </p>
         <input type="hidden" value="@ViewBag.Time" asp-for="Time" />
     </div>
     <br />

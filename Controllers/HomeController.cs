@@ -29,24 +29,14 @@ namespace Group_Project.Controllers
             return View();
         }
 
-        public static List<int> TimeList()
-        {
-            List<int> timeList = new List<int>();
-            for (int i = 8; i <= 20; i++)
-            {
-                timeList.Add(i);
-            }
-            return timeList;
-        }
-
         [HttpGet]
         //sign up page for picking appointment time from list with available
         public IActionResult SignUp()
         {
             var nowDate = DateTime.Now;
 
-            List<int> timelist = TimeList();
-            List<Availablity> availability = new List<Availablity>();
+            // List<int> timelist = TimeList();
+             List<Availablity> availability = new List<Availablity>();
             //list to keep track of of dates already used
             
             for (int i=0; i<=7; i++)
@@ -85,7 +75,6 @@ namespace Group_Project.Controllers
                 availability.Add(tempAvail);
             }
             ViewBag.availability = availability;
-            ViewBag.timelist = timelist;
             return View();
         }
 

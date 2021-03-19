@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Model for our appointments. 
+//Stores group info.
+
 namespace Group_Project.Models
 {
     public class Appointment
