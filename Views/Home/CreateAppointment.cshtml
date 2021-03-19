@@ -7,26 +7,29 @@
 
 @model Group_Project.Models.Appointment
 
+<div class="text-center heading">
+    <h3>Appointment Information</h3>
+</div>
 
-<form asp-action="CreateAppointment" method="post">
+<form asp-action="CreateAppointment" method="post" class="formShadow">
     <div>
-        <label asp-for="GroupName">Group Name</label>
-        <input asp-for="GroupName" />
+        <label asp-for="GroupName" class="required-field">Group Name </label>
+        <input asp-for="GroupName" placeholder="Your group name..."/>
     </div>
 
     <div>
-        <label asp-for="GroupSize">Group Size</label>
-        <input asp-for="GroupSize" />
+        <label asp-for="GroupSize" class="required-field">Group Size </label>
+        <input asp-for="GroupSize" placeholder="Your group size..."/>
     </div>
 
     <div>
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" />
+        <label asp-for="Email" class="required-field">Email </label>
+        <input asp-for="Email" placeholder="Your email..."/>
     </div>
 
     <div>
         <label asp-for="Phone">Phone</label>
-        <input asp-for="Phone" />
+        <input asp-for="Phone" placeholder="Your phone number..."/>
     </div>
 
     <div>
@@ -40,7 +43,7 @@
         <p>@ViewBag.Time</p>
         <input type="hidden" value="@ViewBag.Time" asp-for="Time" />
     </div>
-
-    <button type="submit">Create Appointment</button>
+    <br />
+    <button type="submit" class="btn btn-primary">Create Appointment</button>
 
 </form>
